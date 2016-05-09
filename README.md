@@ -18,6 +18,8 @@ Apex Classes
 	SBX_PostCopyManager - Implements the Salesforce SandboxPostCopy interface.  Delegates to SBX_PostCopyWorkerFactory to obtain a collection of classes containing automation logic then invokes each class's processing.
 
 	SBX_PostCopyManagerTest - Test class for SBX_PostCopyManager.
+	
+	SBX_PostCopyUtil - Utility functions used by the framework.
 
 	SBX_PostCopyWorker - An abstract class defining behavior common to all automation tasks and defining an abstract method which subclasses override.
 	
@@ -27,16 +29,22 @@ Apex Classes
 
 
 Custom Objects
+
 	Post Copy Log - Records the success or failure of an automation task
 
 Tabs
+
 	Post Copy Log
 	
 Page Layout
+
 	Post Copy Log Layout
 	
+	Post Copy Task Layout
+	
 Custom Metadata Type
-  Post Copy Task - Each record identifies an Apex class which performs an automation task during the creation or refresh of a sandbox. 
+
+	Post Copy Task - Each record identifies an Apex class which performs an automation task during the creation or refresh of a sandbox. 
 
 INSTALLATION
 
