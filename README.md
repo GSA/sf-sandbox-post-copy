@@ -36,7 +36,7 @@ Tabs
 
 	Post Copy Log
 	
-Page Layout
+Page Layouts
 
 	Post Copy Log Layout
 	
