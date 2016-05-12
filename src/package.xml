@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>SBX_PostCopyManager</members>
+        <members>SBX_PostCopyManagerTest</members>
+        <members>SBX_PostCopyUtil</members>
+        <members>SBX_PostCopyWorker</members>
+        <members>SBX_PostCopyWorkerFactory</members>
+        <members>SBX_PostCopyWorkerFactoryTest</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomMetadata</name>
+    </types>
+    <types>
+        <members>Post_Copy_Log__c</members>
+        <members>Post_Copy_Task__mdt</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Post_Copy_Log__c-en_US</members>
+        <members>Post_Copy_Task__mdt-en_US</members>
+        <name>CustomObjectTranslation</name>
+    </types>
+    <types>
+        <members>Post_Copy_Log__c</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>Post_Copy_Log__c-Post Copy Log Layout</members>
+        <members>Post_Copy_Task__mdt-Post Copy Task Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>Post_Copy_Log__c</members>
+        <members>Post_Copy_Task__mdt</members>
+        <name>Workflow</name>
+    </types>
+    <version>36.0</version>
+</Package>
