@@ -5,4 +5,8 @@
         <field>Active__c</field>
         <value xsi:type="xsd:boolean">true</value>
     </values>
+    <values>
+        <field>Order_Number__c</field>
+        <value xsi:type="xsd:double">0.0</value>
+    </values>
 </CustomMetadata>

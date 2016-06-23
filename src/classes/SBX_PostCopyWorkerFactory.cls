@@ -36,9 +36,10 @@ public with sharing class SBX_PostCopyWorkerFactory {
 
 	public static List<SBX_PostCopyWorker> getWorkers() {
 		List<Post_Copy_Task__mdt> postCopyTasks = [
-			SELECT Id, DeveloperName, Active__c
+			SELECT Id, DeveloperName, Active__c, Order_Number__c
 			FROM Post_Copy_Task__mdt
 			WHERE Active__c = true
+			ORDER BY Order_Number__c ASC
 		];
 		return getWorkerListFromCustomMetaDataTypes(postCopyTasks);
 	}
