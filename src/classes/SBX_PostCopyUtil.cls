@@ -35,7 +35,6 @@ public with sharing class SBX_PostCopyUtil {
 	private static final String PICKLIST_STATUS_SUCCESS = 'Success';
 	private static final String PICKLIST_STATUS_FAILURE = 'Error';
 	private static final String DELIMITER = '|||';
-	private static final String ADMIN_PROFILE = 'GSA System Administrator';
 
 	/**
 	* Consider making this util less generic by extracting the log object creation aspect into its own class.
@@ -52,21 +51,6 @@ public with sharing class SBX_PostCopyUtil {
 			successLog.Status__c = PICKLIST_STATUS_SUCCESS;
 			successLog.Apex_Class__c = className;
 			insert successLog;
-		}
-	}
-
-	/**
-	* Used in several places to ensure we are always grabbing the correct profile.
-	*/
-	public static Id getProfileId(){
-		try {
-			return [
-				SELECT Id
-				FROM Profile
-				WHERE Name = :ADMIN_PROFILE].Id;
-		} catch (QueryException e){
-
-			return null;
 		}
 	}
 
