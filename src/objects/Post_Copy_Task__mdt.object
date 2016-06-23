@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <description>Identifies those Apex classes which perform automation tasks following the creation or refresh of a sandbox.</description>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <type>Checkbox</type>
+    </fields>
     <label>Post Copy Task</label>
     <pluralLabel>Post Copy Tasks</pluralLabel>
     <visibility>Public</visibility>
