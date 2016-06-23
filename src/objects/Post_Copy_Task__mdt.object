@@ -8,6 +8,16 @@
         <label>Active</label>
         <type>Checkbox</type>
     </fields>
+    <fields>
+        <fullName>Order_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Order Number</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
     <label>Post Copy Task</label>
     <pluralLabel>Post Copy Tasks</pluralLabel>
     <visibility>Public</visibility>
