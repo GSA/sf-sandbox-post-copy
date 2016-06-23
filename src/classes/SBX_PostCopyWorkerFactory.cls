@@ -35,11 +35,10 @@ public with sharing class SBX_PostCopyWorkerFactory {
 	private static final String CLASS_NAME = 'SBX_PostCopyWorkerFactory';
 
 	public static List<SBX_PostCopyWorker> getWorkers() {
-		// arbitrary limit to fetch 100 post copy tasks to satisfy Checkmarx code scans
 		List<Post_Copy_Task__mdt> postCopyTasks = [
-			SELECT Id, DeveloperName
+			SELECT Id, DeveloperName, Active__c
 			FROM Post_Copy_Task__mdt
-			LIMIT 100
+			WHERE Active__c = true
 		];
 		return getWorkerListFromCustomMetaDataTypes(postCopyTasks);
 	}
