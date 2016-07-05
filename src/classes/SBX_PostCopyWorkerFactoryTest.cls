@@ -1,4 +1,6 @@
-/** 
+/**
+*	The sf-sandbox-post-copy framework is an open source project managed in Github (https://github.com/GSA/sf-sandbox-post-copy)
+*
 *	SBX_PostCopyWorkerFactoryTest
 *
 *	@author Derek Benner
@@ -24,7 +26,7 @@ public with sharing class SBX_PostCopyWorkerFactoryTest {
 		List<SBX_PostCopyWorker> workerList = SBX_PostCopyWorkerFactory.getWorkers();
 		System.assertNotEquals(0, workerList.size());
 	}
-	
+
 	/**
 	*	See warning at top
 	*/
@@ -32,6 +34,6 @@ public with sharing class SBX_PostCopyWorkerFactoryTest {
 		List<Post_Copy_Task__mdt> pctList = [SELECT Id FROM Post_Copy_Task__mdt];
 		List<SBX_PostCopyWorker> workerList = SBX_PostCopyWorkerFactory.getWorkers();
 		System.assertNotEquals(pctList.size(), workerList.size());
-	}	
-	
+	}
+
 }
