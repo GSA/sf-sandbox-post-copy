@@ -1,4 +1,6 @@
-/** 
+/**
+*	The sf-sandbox-post-copy framework is an open source project managed in Github (https://github.com/GSA/sf-sandbox-post-copy)
+*
 *	SBX_PostCopyUtil
 *
 *	@author Derek Benner
@@ -11,7 +13,6 @@ public with sharing class SBX_PostCopyUtil {
 	private static final String PICKLIST_STATUS_SUCCESS = 'Success';
 	private static final String PICKLIST_STATUS_FAILURE = 'Error';
 	private static final String DELIMITER = '|||';
-	private static final String ADMIN_PROFILE = 'GSA System Administrator';
 
 	/**
 	* Consider making this util less generic by extracting the log object creation aspect into its own class.
@@ -32,26 +33,11 @@ public with sharing class SBX_PostCopyUtil {
 	}
 
 	/**
-	* Used in several places to ensure we are always grabbing the correct profile.
-	*/ 
-	public static Id getProfileId(){
-		try {
-			return [
-				SELECT Id 
-				FROM Profile 
-				WHERE Name = :ADMIN_PROFILE].Id;
-		} catch (QueryException e){
-
-			return null;
-		}
-	}
-
-	/**
 	* Required to perform the testRun_UnknownExceptionOccursViaChildClass_VerifyLogObjectCreated method
 	* 	in SBX_AdminEmailWorkerTest.
 	*/
 	public class ForcedException extends Exception{
-	
+
 	}
 
 	private static String getErrorMessage(Exception e){
@@ -60,5 +46,5 @@ public with sharing class SBX_PostCopyUtil {
 				+ e.getStackTraceString();
 
 	}
-	
+
 }

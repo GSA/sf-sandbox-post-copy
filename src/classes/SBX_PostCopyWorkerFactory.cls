@@ -1,4 +1,6 @@
-/** 
+/**
+*	The sf-sandbox-post-copy framework is an open source project managed in Github (https://github.com/GSA/sf-sandbox-post-copy)
+*
 *	SBX_PostCopyWorkerFactory
 *
 *	@author Derek Benner
@@ -11,12 +13,12 @@ public with sharing class SBX_PostCopyWorkerFactory {
 	private static final String CLASS_NAME = 'SBX_PostCopyWorkerFactory';
 
 	public static List<SBX_PostCopyWorker> getWorkers() {
-		// arbitrary limit to fetch 100 post copy tasks to satisfy Checkmarx code scans
 		List<Post_Copy_Task__mdt> postCopyTasks = [
-										SELECT Id, DeveloperName 
-										FROM Post_Copy_Task__mdt 
-										LIMIT 100
-									];
+			SELECT Id, DeveloperName, Active__c, Order_Number__c
+			FROM Post_Copy_Task__mdt
+			WHERE Active__c = true
+			ORDER BY Order_Number__c ASC
+		];
 		return getWorkerListFromCustomMetaDataTypes(postCopyTasks);
 	}
 
@@ -29,7 +31,7 @@ public with sharing class SBX_PostCopyWorkerFactory {
 				// a log obj was created in createWorkerObjectFromString() above; it also retuned a null obj so we're not going to add it
 				continue;
 			}
-			workerList.add(worker); 
+			workerList.add(worker);
 		}
 		return workerList;
 	}
@@ -44,5 +46,5 @@ public with sharing class SBX_PostCopyWorkerFactory {
 		}
 		return worker;
 	}
-	
+
 }
