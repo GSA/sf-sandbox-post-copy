@@ -1,4 +1,6 @@
-/** 
+/**
+*	The sf-sandbox-post-copy framework is an open source project managed in Github (https://github.com/GSA/sf-sandbox-post-copy)
+*
 *	SBX_PostCopyWorker
 *
 *	@author Derek Benner
