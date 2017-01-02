@@ -1,16 +1,17 @@
 /**
-*	The sf-sandbox-post-copy framework is an open source project managed in Github (https://github.com/GSA/sf-sandbox-post-copy)
-*
-*	SBX_PostCopyManagerTest
-*
-*	@author Derek Benner
-*	@author Manikanta Ramineni
-*	@author Christian Coleman
+*	@description The sf-sandbox-post-copy framework is an open source project managed in Github (https://github.com/GSA/sf-sandbox-post-copy)
+*	@author Derek Benner, Manikanta Ramineni, Christian Coleman
 *	@date 4/12/2016
+* @group Tests
 */
 @isTest
 public with sharing class SBX_PostCopyManagerTest {
 
+	/**
+	* @description
+	* @return void
+	* @example
+	*/
 	static testMethod void testRunApexClass_InitiateSandboxRefresh_VerifyPostCopyLogsWereCreated(){
 		SBX_PostCopyManager manager = new SBX_PostCopyManager();
 		/**

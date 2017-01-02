@@ -1,17 +1,18 @@
 /**
-*	The sf-sandbox-post-copy framework is an open source project managed in Github (https://github.com/GSA/sf-sandbox-post-copy)
+*	@description The sf-sandbox-post-copy framework is an open source project managed in Github (https://github.com/GSA/sf-sandbox-post-copy)
 *
-*	SBX_PostCopyWorkerFactory
-*
-*	@author Derek Benner
-*	@author Manikanta Ramineni
-*	@author Christian Coleman
+*	@author Derek Benner, Manikanta Ramineni, Christian Coleman
 *	@date 4/12/2016
+* @group Sandbox Post Copy
 */
 public with sharing class SBX_PostCopyWorkerFactory {
 
 	private static final String CLASS_NAME = 'SBX_PostCopyWorkerFactory';
 
+	/**
+	* @description
+	* @return List containing Id's, and API Names of Post Copy Tasks
+	*/
 	public static List<SBX_PostCopyWorker> getWorkers() {
 		List<Post_Copy_Task__mdt> postCopyTasks = [
 			SELECT Id, DeveloperName, Active__c, Order_Number__c
@@ -22,6 +23,11 @@ public with sharing class SBX_PostCopyWorkerFactory {
 		return getWorkerListFromCustomMetaDataTypes(postCopyTasks);
 	}
 
+	/**
+	* @description
+	* @param List<Post_Copy_Task__mdt> taskList
+	* @return
+	*/
 	private static List<SBX_PostCopyWorker> getWorkerListFromCustomMetaDataTypes(List<Post_Copy_Task__mdt> taskList){
 		List<SBX_PostCopyWorker> workerList = new List<SBX_PostCopyWorker>();
 		for(Post_Copy_Task__mdt task : taskList){
@@ -36,6 +42,11 @@ public with sharing class SBX_PostCopyWorkerFactory {
 		return workerList;
 	}
 
+	/**
+	* @description
+	* @param String workerName
+	* @return SBX_PostCopyWorker
+	*/
 	private static SBX_PostCopyWorker createWorkerObjectFromString(String workerName){
 		SBX_PostCopyWorker worker = null;
 		try {
@@ -46,5 +57,4 @@ public with sharing class SBX_PostCopyWorkerFactory {
 		}
 		return worker;
 	}
-
 }
